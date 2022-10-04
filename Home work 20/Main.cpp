@@ -54,12 +54,13 @@ int range(T arr[], const int length, int A, int B) {
 		if(arr[i] > A && arr[i] < B)
 	return arr[i];
 }
-template <typename T>
-void counter(T arr[], const int length, T value) {
+
+int counter(int arr[], const int length, int value) {
 	int count = 0;
 	for (int i = 0; i < length; i++)
-	if(arr[i] == arr[i + 1])
+	if(arr[i] == value)
 	count++;
+	return count;
 }
 
 
@@ -68,25 +69,25 @@ int main() {
 	int a, b, n, m, v;
 	const int  size = 100;
 	int mass[size];
-	cout << "Ìàññèâ çàïîëíåííûé ñëó÷àéíûìè ÷èñëàìè: \n";
+	cout << "ÃŒÃ Ã±Ã±Ã¨Ã¢ Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã­Ã»Ã© Ã±Ã«Ã³Ã·Ã Ã©Ã­Ã»Ã¬Ã¨ Ã·Ã¨Ã±Ã«Ã Ã¬Ã¨: \n";
 	srand(time(NULL));
 	for (int i = 0; i < size; i++)
 		mass[i] = -100 + rand() % (100 - (-100)+ 1);
 	showArr(mass, size);
-	cout << "\nÂâåäèòå ÷èñëî ïîçèöèş êîòîğîãî æåëàåòå óçíàòü: \n";
+	cout << "\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã·Ã¨Ã±Ã«Ã® Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¾ ÃªÃ®Ã²Ã®Ã°Ã®Ã£Ã® Ã¦Ã¥Ã«Ã Ã¥Ã²Ã¥ Ã³Ã§Ã­Ã Ã²Ã¼: \n";
 	cin >> n;
-	cout << "\nÔóíêöèÿ èíäåêñà ïåğâîãî âõîæäåíèÿ ıëåìåíòà: \n" << searchIndex(mass, size, n);
-	cout << "\nÂâåäèòå ÷èñëî ïîçèöèş êîòîğîãî æåëàåòå óçíàòü: \n";
+	cout << "\nÃ”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã¨Ã­Ã¤Ã¥ÃªÃ±Ã  Ã¯Ã¥Ã°Ã¢Ã®Ã£Ã® Ã¢ÃµÃ®Ã¦Ã¤Ã¥Ã­Ã¨Ã¿ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã : \n" << searchIndex(mass, size, n);
+	cout << "\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã·Ã¨Ã±Ã«Ã® Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¾ ÃªÃ®Ã²Ã®Ã°Ã®Ã£Ã® Ã¦Ã¥Ã«Ã Ã¥Ã²Ã¥ Ã³Ã§Ã­Ã Ã²Ã¼: \n";
 	cin >> m;
-	cout << "\nÔóíêöèÿ èíäåêñà ïîñëåäíåãî âõîæäåíèÿ ıëåìåíòà: \n" << searchLastIndex(mass, size, m);
-	cout << "\nÌàêñèìàëüíûé ıëåìåíò ìàññèâà: \n" << maxElement(mass, size);
-	cout << "\nÌèíèìàëüíûé ıëåìåíò ìàññèâà: \n" << minElement(mass, size);
-	cout << "\nÑğåäíåå àğèôì-å âñåõ ıëåìåíòîâ ìàññèâà: \n" << meanValue(mass, size);
-	cout << "\nÂâåäèòå äèàïàçîí ÷èñåë îò è äî: \n";
+	cout << "\nÃ”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã¨Ã­Ã¤Ã¥ÃªÃ±Ã  Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¥Ã£Ã® Ã¢ÃµÃ®Ã¦Ã¤Ã¥Ã­Ã¨Ã¿ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã : \n" << searchLastIndex(mass, size, m);
+	cout << "\nÃŒÃ ÃªÃ±Ã¨Ã¬Ã Ã«Ã¼Ã­Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã¬Ã Ã±Ã±Ã¨Ã¢Ã : \n" << maxElement(mass, size);
+	cout << "\nÃŒÃ¨Ã­Ã¨Ã¬Ã Ã«Ã¼Ã­Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã¬Ã Ã±Ã±Ã¨Ã¢Ã : \n" << minElement(mass, size);
+	cout << "\nÃ‘Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã Ã°Ã¨Ã´Ã¬-Ã¥ Ã¢Ã±Ã¥Ãµ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã : \n" << meanValue(mass, size);
+	cout << "\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã¨Ã Ã¯Ã Ã§Ã®Ã­ Ã·Ã¨Ã±Ã¥Ã« Ã®Ã² Ã¨ Ã¤Ã®: \n";
 	cin >> a >> b;
-	cout << "\nİëåìåíòû ìàññèâà, âîøåäøèå â äèàïàçîí: \n"  << range(mass, size, a, b);
-	cout << "\nÂâåäèòå ıëåìåíò ìàññèâà, ÷òîáû óçíàòü êîë-âî âõîæäåíèé: \n";
+	cout << "\nÃÃ«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã±Ã±Ã¨Ã¢Ã , Ã¢Ã®Ã¸Ã¥Ã¤Ã¸Ã¨Ã¥ Ã¢ Ã¤Ã¨Ã Ã¯Ã Ã§Ã®Ã­: \n"  << range(mass, size, a, b);
+	cout << "\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã¬Ã Ã±Ã±Ã¨Ã¢Ã , Ã·Ã²Ã®Ã¡Ã» Ã³Ã§Ã­Ã Ã²Ã¼ ÃªÃ®Ã«-Ã¢Ã® Ã¢ÃµÃ®Ã¦Ã¤Ã¥Ã­Ã¨Ã©: \n";
 	cin >> v;
-	counter(mass, size,v);//íå ğàáîòàåò
+	cout << counter(mass, size,v);//Ã­Ã¥ Ã°Ã Ã¡Ã®Ã²Ã Ã¥Ã²
 	return 0;
 }
